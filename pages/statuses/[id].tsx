@@ -1,3 +1,5 @@
+import { StatusCard } from '@/components/molecules/StatusCard'
+import { BirdHouseLayout } from '@/components/organisms/layouts/BirdHouseLayout'
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 
@@ -46,14 +48,15 @@ export const getServerSideProps: GetServerSideProps<StatusPageProps> = async (
 
 const StatusPage: NextPage<StatusPageProps> = (props) => {
   return (
-    <>
-      <Head>
-        <title>{props.status.body}</title>
-        <meta property="og:title" content={props.status.body} key="ogtitle" />
-      </Head>
-      <h1>{props.status.body}</h1>
-      <p>{props.status.author}</p>
-    </>
+    <BirdHouseLayout>
+      <>
+        <Head>
+          <title>{props.status.body}</title>
+          <meta property="og:title" content={props.status.body} key="ogtitle" />
+        </Head>
+        <StatusCard {...props.status} />
+      </>
+    </BirdHouseLayout>
   )
 }
 
