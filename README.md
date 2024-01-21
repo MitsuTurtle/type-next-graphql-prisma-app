@@ -1,3 +1,5 @@
+## [出来る100%TypeScript 作って学ぶNext.js + GraphQL + Prisma(上) - GCP編](https://zenn.dev/oubakiou/books/181b750dfb6838)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
