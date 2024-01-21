@@ -36,12 +36,22 @@ export const getServerSideProps: GetServerSideProps<StatusPageProps> = async (
   context,
 ) => {
   const res = await fetch(
-    `http://localhost:3000/api/status/getStatus?id=${context.query.id}`,
+    // `http://localhost:3000/api/status/getStatus?id=${context.query.id}`,
+    // `https://ssrhelloworld98b9f-3v2qu42wda-de.a.run.app/api/status/getStatus?id=${context.query.id}`,
+    `${process.env.API_ROOT}/api/status/getStatus?id=${context.query.id}`,
   )
   const statusData = (await res.json()) as unknown
   if (!isStatus(statusData)) {
     return { notFound: true }
   }
+
+  const m = 60
+  const h = 60 * m
+  const d = 24 * h
+  context.res.setHeader(
+    'Cache-Control',
+    `public, s-maxage=${10 * m}, stale-while-revalidate=${30 * d}`,
+  )
 
   return { props: { status: statusData } }
 }

@@ -1,5 +1,20 @@
 ## [出来る100%TypeScript 作って学ぶNext.js + GraphQL + Prisma(上) - GCP編](https://zenn.dev/oubakiou/books/181b750dfb6838)
 
+Next.jsとFirebaseを連携する<br />
+[Next.js を統合する](https://firebase.google.com/docs/hosting/nextjs?hl=ja)
+
+hostingしているサイトを非公開にする
+
+```bash
+npx firebase hosting:disable
+```
+
+functionsを使えなくする
+
+```
+プランをSpark (無料) から Blaze (従量課金)に変更する
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

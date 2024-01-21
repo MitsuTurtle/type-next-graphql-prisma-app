@@ -23,7 +23,11 @@ const isStatuses = (data: unknown): data is Status[] => {
 export const getServerSideProps: GetServerSideProps<
   HomePageProps
 > = async () => {
-  const res = await fetch(`http://localhost:3000/api/status/listStatuses`)
+  // const res = await fetch(`http://localhost:3000/api/status/listStatuses`)
+  const res = await fetch(
+    // `https://ssrhelloworld98b9f-3v2qu42wda-de.a.run.app/api/status/listStatuses`,
+    `${process.env.API_ROOT}/api/status/listStatuses`,
+  )
   const statusesData = (await res.json()) as unknown
   if (!isStatuses(statusesData)) {
     return { notFound: true }

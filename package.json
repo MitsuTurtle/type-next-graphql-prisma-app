@@ -2,11 +2,13 @@
   "name": "type-next-graphql-prisma-app",
   "version": "0.1.0",
   "private": true,
+  "main": "firebaseFunctions.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "firebase deploy --only functions,hosting"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -16,6 +18,7 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.15.5",
     "@mui/material": "^5.15.5",
+    "firebase-functions": "^4.6.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
@@ -28,6 +31,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "^9.1.0",
+    "firebase-tools": "^13.0.3",
     "prettier": "^3.1.1",
     "typescript": "^5"
   }

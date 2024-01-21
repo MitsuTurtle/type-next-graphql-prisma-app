@@ -34,3 +34,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Firebase
+.firebase/
+
+# XDG Base Directory
+.config
+
+# env
+.env
+.env*
+
+out/_next
