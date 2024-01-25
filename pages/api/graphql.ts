@@ -35,32 +35,40 @@ const resolvers: Config['resolvers'] = {
       return getStatus(args?.id) ?? null
     },
   },
+  Status: {
+    author: (parent: { authorId: string }) => {
+      return getAuthor(parent.authorId)
+    },
+  },
 }
 const listStatuses = (): Status[] => statuses
 const getStatus = (id: string): Status | undefined =>
   statuses.find((d) => d.id === id)
+const getAuthor = (id: string): Author | undefined =>
+  authors.find((a) => a.id === id)
 
 // ハードコーディングされたデータ
-type Status = { id: string; body: string; author: Author; createdAt: string }
-type Author = { id: string; name: string }
+type Status = { id: string; body: string; authorId: string; createdAt: string }
 const statuses: Status[] = [
   {
     id: '2',
     body: 'inviting coworkers',
-    author: {
-      id: '1',
-      name: 'jack',
-    },
+    authorId: '1',
     createdAt: new Date(2021, 4, 2).toISOString(),
   },
   {
     id: '1',
     body: 'just setting up my app',
-    author: {
-      id: '2',
-      name: 'jack',
-    },
+    authorId: '1',
     createdAt: new Date(2021, 4, 1).toISOString(),
+  },
+]
+
+type Author = { id: string; name: string }
+const authors: Author[] = [
+  {
+    id: '1',
+    name: 'jack',
   },
 ]
 
